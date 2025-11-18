@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<!--
+	Usando Photon por HTML5 UP
+-->
+<html>
+
+<head>
+	<title>Security Portifolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- Bootstrap CSS (CDN) -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+
+	<!-- Fonte moderna -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+	<style>
+		/* Fundo do header - garantido com maior especificidade e fallback */
+		#header {
+			/* garante caminho relativo correto desde index.html */
+			background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("./images/jesse-background.png");
+			background-size: cover !important;
+			background-position: center center !important;
+			background-repeat: no-repeat !important;
+			min-height: 60vh;
+			display: flex;
+			align-items: center;
+			position: relative;
+			z-index: 0;
+			/* permite que .inner fique acima do background */
+		}
+
+		/* Inner acima do background */
+		#header .inner {
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Limita largura do texto no header e alinha à esquerda */
+		#header .inner {
+			max-width: 90ch;
+			margin: 0;
+			padding: 2.5rem 1.5rem;
+			text-align: left;
+			overflow-wrap: break-word;
+			word-break: break-word;
+			color: #fff;
+			background: rgba(0, 0, 0, 0.25);
+			border-radius: 6px;
+		}
+
+		/* Centraliza o botão e desenha uma linha branca acima dele */
+		#header .inner ul.actions.special {
+			display: flex;
+			justify-content: center;
+			/* centra horizontalmente os botões */
+			gap: 0.75rem;
+			padding-left: 0;
+			margin: 1.5rem auto 0;
+			/* centraliza bloco e cria espaçamento superior */
+			position: relative;
+		}
+
+		/* linha branca centralizada acima dos botões */
+		#header .inner ul.actions.special::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: -1rem;
+			/* ajuste a distância da linha para o botão */
+			transform: translateX(-50%);
+			width: 6rem;
+			/* ajuste a largura da linha conforme desejar */
+			height: 2px;
+			/* espessura da linha */
+			background: #fff;
+			opacity: 0.95;
+			border-radius: 2px;
+		}
+
+		/* responsivo */
+		@media (max-width: 480px) {
+			#header .inner ul.actions.special::before {
+				width: 3.5rem;
+				top: -0.75rem;
+			}
+		}
+
+		/* Ajustes para telas pequenas */
+		@media (max-width: 768px) {
+			#header {
+				min-height: 50vh;
+			}
+
+			#header .inner {
+				padding: 1.25rem;
+				max-width: 100%;
+			}
+		}
+
+		@media (max-width: 480px) {
+			#header .inner {
+				padding: 1rem;
+			}
+		}
+
+		/* Estilos para seções carregadas dinamicamente */
+		#main-content section {
+			padding: 4rem 0;
+		}
+
+		/* Video background para a seção #one */
+		#one {
+			position: relative;
+			overflow: hidden;
+			min-height: 60vh;
+		}
+
+		#one video.bg-video {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 0;
+		}
+
+		#one .video-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.35);
+			z-index: 1;
+		}
+
+		#one .container {
+			position: relative;
+			z-index: 2;
+			color: #fff;
+		}
+
+		/* Estilos para footer com vídeo de background */
+		#footer {
+			position: relative;
+			overflow: hidden;
+			min-height: 200px;
+			/* ajuste conforme desejar */
+			color: #fff;
+			background-color: #000;
+			/* fallback caso vídeo não carregue */
+		}
+
+		#footer video.footer-bg {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 0;
+			filter: brightness(0.6) saturate(0.95);
+			/* ajuste visual do vídeo */
+		}
+
+		#footer .footer-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.45);
+			/* melhora legibilidade */
+			z-index: 1;
+		}
+
+		#footer .footer-content {
+			position: relative;
+			z-index: 2;
+			padding: 3rem 1.25rem;
+		}
+
+		/* Footer: botão de download do currículo e ícones maiores */
+		#footer .footer-content .download-cv {
+			margin-bottom: 1rem;
+		}
+
+		#footer .footer-content .download-cv .btn {
+			padding: 0.5rem 1rem;
+			font-weight: 600;
+		}
+
+		/* aumenta tamanho dos ícones e dá formato circular */
+		#footer .footer-content .icons a {
+			font-size: 1.6rem;
+			/* tamanho do ícone */
+			width: 48px;
+			height: 48px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.06);
+			color: #fff;
+			transition: transform .12s ease, background .12s ease;
+		}
+
+		#footer .footer-content .icons a:hover {
+			transform: translateY(-3px);
+			background: rgba(255, 255, 255, 0.14);
+			color: #fff;
+		}
+
+		#footer .footer-content .icons li {
+			margin: 0 0.45rem;
+		}
+
+		/* pequena responsividade */
+		@media (max-width: 576px) {
+			#footer .footer-content {
+				padding: 2rem 1rem;
+			}
+		}
+
+		/* estado inicial (escondido) para elementos que vão animar ao scroll */
+		.animate-on-scroll {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(12px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+		}
+
+		/* estado final após animação (permanece visível) */
+		.animate-on-scroll.is-visible {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+
+		/* Hero name (título grande e moderno) */
+		#header .hero-title {
+			font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			font-weight: 800;
+			font-size: clamp(2.6rem, 7vw, 5.2rem);
+			/* responsivo */
+			line-height: 1;
+			margin: 0 0 0.6rem 0;
+			color: #ffffff;
+			letter-spacing: -0.02em;
+			text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+		}
+
+		/* ajustar espaçamento entre título e o bloco já existente */
+		#header .inner h5 {
+			margin-top: 0.6rem;
+		}
+	</style>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<div class="inner">
+			<!-- Título grande moderno -->
+			<h1 class="hero-title">Jesse Marques</h1>
+			<h5 class="animate__animated animate__backInLeft">Sou um profissional de tecnologia que vive na interseção
+				entre o desenvolvimento de software e a segurança cibernética.
+
+				Minha paixão não é apenas construir aplicações, mas construí-las da forma correta — seguras desde a
+				primeira linha de código. Com experiência que vai da análise ofensiva (identificação de
+				vulnerabilidades) à implementação defensiva, eu ajudo a criar sistemas que não apenas funcionam, mas que
+				resistem.
+			</h5>
+			<p class="animate__animated animate__backInRight">Meu objetivo é transformar a segurança de
+				'obstáculo' em parte natural do processo de desenvolvimento.</p>
+
+			<!-- Agora são âncoras para rolar até as seções (que serão inseridas dinamicamente) -->
+			<ul class="actions special ">
+				<li><a href="#one" class="button">conheça mais</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- container onde as páginas (fragments) serão inseridas -->
+	<main id="main-content" aria-live="polite"></main>
+
+	<!-- Footer -->
+	<section id="footer" aria-label="Rodapé com vídeo de fundo">
+		<!-- vídeo de background -->
+		<video class="footer-bg" autoplay muted loop playsinline>
+			<source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463599/servidor_ugyqgs.mp4" type="video/mp4">
+			Seu navegador não suporta vídeo.
+		</video>
+		<div class="footer-overlay" aria-hidden="true"></div>
+
+		<!-- conteúdo acima do vídeo -->
+		<div class="footer-content container text-center">
+			<!-- botão para baixar currículo (coloque assets/docs/curriculo.pdf no projeto) -->
+			<div class="download-cv m-5 animate__animated animate__headShake animate__infinite	infinite">
+				<a href="assets/docs/curriculo.pdf" download class="btn btn-outline-light">Baixar currículo</a>
+			</div>
+			<ul class="icons mb-3">
+				<li class="d-inline-block mx-2">
+					<a href="https://wa.me/5561982573590" target="_blank" rel="noopener noreferrer"
+					   class="icon brands alt fa-whatsapp" aria-label="Conversa WhatsApp"></a>
+				</li>
+				<li class="d-inline-block mx-2">
+					<a href="https://github.com/VeteranoSecurity" target="_blank" rel="noopener noreferrer"
+					   class="icon brands alt fa-github" aria-label="GitHub"></a>
+				</li>
+				<li class="d-inline-block mx-2">
+					<a href="mailto:veteranodev@gmail.com" class="icon solid alt fa-envelope" aria-label="Enviar email"></a>
+				</li>
+			</ul>
+			<ul class="copyright list-unstyled mb-0">
+				<li> Entre em contato pelas redes acima</li>
+				<li>Design por Jesse Marques</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Script para carregar fragments das páginas -->
+	<script>
+		(async function loadSections() {
+			const main = document.getElementById('main-content');
+			const pages = ['pages/one.html', 'pages/two.html', 'pages/three.html'];
+
+			try {
+				// Busca todos os fragments em paralelo e insere na ordem
+				const responses = await Promise.all(pages.map(p => fetch(p)));
+				const texts = await Promise.all(responses.map(r => {
+					if (!r.ok) throw new Error('Falha ao carregar ' + r.url);
+					return r.text();
+				}));
+				texts.forEach(html => {
+					const wrapper = document.createElement('div');
+					wrapper.innerHTML = html;
+					// append each top-level section(s)
+					Array.from(wrapper.children).forEach(child => main.appendChild(child));
+				});
+
+				// chama as animações depois que as seções forem inseridas
+				if (typeof window.initScrollAnimations === 'function') {
+					window.initScrollAnimations();
+				} else {
+					// caso a função ainda não exista (ordem de scripts), dispara evento para quem estiver escutando
+					document.dispatchEvent(new Event('sectionsLoaded'));
+				}
+			} catch (err) {
+				console.error('Erro ao carregar seções:', err);
+				// opcional: mostrar mensagem simples ao usuário
+			}
+
+			// comportamento suave ao clicar nas âncoras do header (caso já inseridas)
+			document.querySelectorAll('#header a[href^="#"]').forEach(a => {
+				a.addEventListener('click', function (e) {
+					e.preventDefault();
+					const id = this.getAttribute('href').slice(1);
+					const el = document.getElementById(id);
+					if (el) el.scrollIntoView({ behavior: 'smooth' });
+				});
+			});
+		})();
+	</script>
+
+	<!-- Script para animações de rolagem -->
+	<script>
+		// exposto globalmente para ser chamado após carregar fragments
+		window.initScrollAnimations = function () {
+			const items = document.querySelectorAll('.animate-on-scroll');
+			if (!items.length) return;
+
+			const io = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) return;
+					const el = entry.target;
+
+					// ler data-attributes (padrões)
+					const anim = el.dataset.animate || 'fadeInUp'; // sem prefixo "animate__"
+					const delay = el.dataset.delay || '0s';
+					const duration = el.dataset.duration || '0.8s';
+
+					// tornar visível imediatamente (antes de aplicar animação)
+					el.style.visibility = 'visible';
+					// definir variáveis do animate.css
+					el.style.setProperty('--animate-duration', duration);
+					el.style.setProperty('--animate-delay', delay);
+
+					// adicionar classes do animate.css
+					el.classList.add('animate__animated', `animate__${anim}`);
+
+					// quando terminar a animação: manter visível e limpar classes de animação
+					const onEnd = () => {
+						el.classList.add('is-visible');
+						el.classList.remove('animate__animated', `animate__${anim}`);
+						el.removeEventListener('animationend', onEnd);
+					};
+					el.addEventListener('animationend', onEnd, { once: true });
+
+					observer.unobserve(el); // anima apenas uma vez
+				});
+			}, {
+				threshold: 0.12,
+				rootMargin: '0px 0px -8% 0px'
+			});
+
+			items.forEach(i => io.observe(i));
+		};
+
+		// se as sections são carregadas dinamicamente, loadSections já chama initScrollAnimations
+		// caso contrário, inicializa no DOMContentLoaded
+		document.addEventListener('DOMContentLoaded', () => {
+			// pequeno timeout para garantir que fragments inseridos (quando não via fetch)
+			setTimeout(() => {
+				if (typeof window.initScrollAnimations === 'function') window.initScrollAnimations();
+			}, 60);
+		});
+	</script>
+
+	<!-- Scripts existentes -->
+	<!-- Bootstrap JS (bundle com Popper) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

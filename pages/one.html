@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>AppSec — Jesse Marques</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+        /* Vídeo como background da seção #one */
+        #one {
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+
+        #one video.bg-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.8) contrast(1);
+        }
+
+        #one .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            /* ajuste a opacidade se precisar */
+            z-index: 1;
+        }
+
+        #one .container {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        /* Limita tamanho do vídeo embutido para não ficar gigante */
+        .image.fit video.inline-video {
+            display: block;
+            width: 100%;
+            max-width: 720px;
+            /* largura máxima conveniente em telas grandes */
+            max-height: 420px;
+            /* altura máxima */
+            height: auto;
+            object-fit: cover;
+            /* mantém preenchimento visual */
+            border-radius: 6px;
+            margin: 0 auto;
+            /* centraliza dentro da coluna */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 1024px) {
+            .image.fit video.inline-video {
+                max-width: 640px;
+                max-height: 360px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .image.fit video.inline-video {
+                max-width: 100%;
+                max-height: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="one" class="main style1">
+        <!-- vídeo de background -->
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463249/numeros_qr6ihn.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+        <div class="video-overlay" aria-hidden="true"></div>
+
+        <!-- container animado ao entrar na viewport -->
+        <div class="container animate-on-scroll" data-animate="fadeInRightBig" data-delay="0.1s">
+            <div class="row gtr-150">
+                <div class="col-6 col-12-medium animate-on-scroll" data-animate="fadeInUp" data-delay="0.15s">
+                    <header class="major">
+                        <h2 class="text-white">AppSec</h2>
+                    </header>
+                    <p>Minha missão é garantir que a segurança seja parte do DNA do software, não uma camada superficial. Atuo em todo o ciclo de vida do desenvolvimento (SDLC) para identificar, corrigir e prevenir vulnerabilidades.</p>
+                </div>
+                <div class="col-6 col-12-medium imp-medium animate-on-scroll" data-animate="zoomIn" data-delay="0.25s">
+                    <!-- vídeo ilustrativo -->
+                    <span class="image fit">
+                        <video class="inline-video" autoplay muted loop playsinline>
+                            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463248/ciclo_zlig1d.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

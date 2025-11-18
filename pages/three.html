@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Portfólio — Jesse Marques</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+        /* vídeo de background para a seção three */
+        #three {
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+
+        #three video.bg-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.85) contrast(1.02);
+        }
+
+        #three .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            /* ajuste opacidade conforme precisar */
+            z-index: 1;
+        }
+
+        #three .container {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="three" class="main style1 special">
+        <!-- vídeo de background -->
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463254/wavewhite_jrnmyu.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+        <div class="video-overlay" aria-hidden="true"></div>
+
+        <div class="container">
+            <header class="major animate-on-scroll" data-animate="fadeInUp" data-delay="0.05s">
+                <h2 class="text-white">Habilidades</h2>
+            </header>
+            <p class="animate-on-scroll" data-animate="fadeInUp" data-delay="0.12s">Eu não apenas entendo a teoria da
+                segurança; eu coloco a mão na massa e escrevo o código que são facilmente adotadas pelas equipes de
+                engenharia sem sacrificar a agilidade.</p>
+
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium animate-on-scroll" data-animate="zoomIn" data-delay="0.2s">
+                    <span class="image fit">
+                        <video class="inline-video" autoplay muted loop playsinline>
+                            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463265/codeboy2_ghwc6u.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </span>
+                    <h3 class="text-white">Pentest</h3>
+                    <p>Com experiência prática em testes de intrusão, aplico uma metodologia estruturada para simular
+                        ataques do mundo real. Meu foco é identificar e explorar vulnerabilidades críticas, entregando
+                        relatórios claros e acionáveis que guiam a correção e fortalecem a postura de segurança.</p>
+                    <ul class="actions special">
+                        <button type="button" class="btn btn-outline-secondary" disabled>Mais</button>
+                    </ul>
+                </div>
+                <div class="col-4 col-12-medium animate-on-scroll" data-animate="zoomIn" data-delay="0.25s">
+                    <span class="image fit">
+                        <video class="inline-video" autoplay muted loop playsinline>
+                            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463294/codeboy_ixclja.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </span>
+                    <h3 class="text-white">CTF</h3>
+                    <p>Participante ativo e premiado em competições de Capture The Flag (CTF). Esta paixão demonstra não
+                        apenas minha habilidade técnica para resolver problemas complexos sob pressão, mas também meu
+                        comprometimento constante com o aprendizado e a superação de desafios na área de segurança.</p>
+                    <ul class="actions special">
+                        <button type="button" class="btn btn-outline-secondary" disabled>Mais</button>
+                    </ul>
+                </div>
+                <div class="col-4 col-12-medium animate-on-scroll" data-animate="zoomIn" data-delay="0.3s">
+                    <span class="image fit">
+                        <video class="inline-video" autoplay muted loop playsinline>
+                            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463256/pipe_qkms37.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </span>
+                    <h3 class="text-white">DevSecOps</h3>
+                    <p>Especialista em fortalecer o ciclo de desenvolvimento (CI/CD) integrando a segurança desde o
+                        início. Minha experiência inclui a implementação de security gates em pipelines, a automação de
+                        verificações de segurança (SAST/DAST) e o gerenciamento de Infraestrutura como Código (IaC) de
+                        forma segura.</p>
+                    <ul class="actions special">
+                        <button type="button" class="btn btn-outline-secondary" disabled>Mais</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

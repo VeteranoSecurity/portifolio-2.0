@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Serviços — Jesse Marques</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body>
+    <section id="two" class="main style2">
+        <style>
+            /* estilos locais para o vídeo de fundo */
+            #two {
+                position: relative;
+                overflow: hidden;
+                min-height: 60vh;
+            }
+
+            #two video.bg-video {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 0;
+            }
+
+            #two .video-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.35);
+                /* ajuste opacidade conforme quiser */
+                z-index: 1;
+            }
+
+            #two .container {
+                position: relative;
+                z-index: 2;
+                color: #fff;
+            }
+        </style>
+
+        <!-- video de background -->
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dg6etkqg5/video/upload/v1763463257/rede-rosa_csg8um.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+        </video>
+        <div class="video-overlay" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="row gtr-150">
+                <div class="col-6 col-12-medium animate-on-scroll" data-animate="fadeInLeft" data-delay="0.1s">
+                    <ul class="major-icons">
+                        <li><span class="icon solid style1 major fa-code"></span></li>
+                        <li><span class="icon solid style2 major fa-bolt"></span></li>
+                        <li><span class="icon solid style4 major fa-cog"></span></li>
+                        <li><span class="icon solid style5 major fa-desktop"></span></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-12-medium animate-on-scroll" data-animate="fadeInRight" data-delay="0.15s">
+                    <header class="major">
+                        <h2>Especialista em Conscientização sobre Segurança</h2>
+                    </header>
+                    <p>A tecnologia é apenas metade da batalha; o elo humano é crucial. Eu desenvolvo e implemento
+                        programas de treinamento e conscientização que capacitam as equipes a se tornarem a primeira
+                        linha de defesa. Meu objetivo é transformar a mentalidade de segurança de uma obrigação para uma
+                        cultura proativa, reduzindo o risco de phishing, engenharia social e outros ataques focados em
+                        pessoas.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
