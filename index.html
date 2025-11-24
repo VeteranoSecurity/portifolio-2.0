@@ -253,10 +253,36 @@
 		#header .inner h5 {
 			margin-top: 0.6rem;
 		}
+
+		/* Top-right CV button */
+		.top-cv {
+			position: fixed;
+			top: 18px;
+			right: 18px;
+			z-index: 9999;
+			pointer-events: auto;
+		}
+
+		.top-cv .btn {
+			padding: 0.45rem 0.95rem;
+			font-weight: 600;
+			border-radius: 0.35rem;
+		}
+
+		/* esconde em telas muito pequenas (opcional) */
+		@media (max-width: 576px) {
+			.top-cv {
+				display: none;
+			}
+		}
 	</style>
 </head>
 
 <body class="is-preload">
+	<!-- botão de download no canto superior direito (mesmo estilo do footer) -->
+	<div class="top-cv animate__animated animate__headShake animate__infinite">
+		<a href="assets/docs/curriculo.pdf" download class="btn btn-outline-light">Baixar currículo</a>
+	</div>
 
 	<!-- Header -->
 	<section id="header">
