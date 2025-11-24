@@ -76,8 +76,8 @@ input, select, textarea {
 
 /* Fallback imediato para evitar flash de cor ao carregar imagens/vídeos */
 html, body {
-    background-color: #000 !important;
-    background: #000 !important;
+    background-color: #000;
+    background: #000;
     color: #fff;
 }
 
